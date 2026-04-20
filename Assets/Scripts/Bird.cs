@@ -44,6 +44,8 @@ public class Bird : MonoBehaviour
         direction.Normalize();
 
         GetComponent<Rigidbody2D>().AddForce(direction * _launchForce);
+        var audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     void OnMouseDrag()
