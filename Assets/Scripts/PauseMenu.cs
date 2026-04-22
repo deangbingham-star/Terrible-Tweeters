@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -25,33 +26,36 @@ public class PauseMenu : MonoBehaviour
         }
 
 
-        void resume()
-        {
-            pauseMenuUI.SetActive(false);
-            Time.timeScale = 1f;
-            GameIsPaused = false;
-            Debug.Log("Resume");
-        }
 
-        void pause()
-        {
-            pauseMenuUI.SetActive(true);
-            Time.timeScale = 0f;
-            GameIsPaused = true;
-            Debug.Log("PauseMenu");
-        }
 
-        void LoadMenu()
-        {
-            //pauseMenuUI.SetActive(false);
-            //Time.timeScale = 1f;
-            Debug.Log("LoadMenu");
-        }
+     
+    }
+    public void LoadMenu()
+    {
+        //pauseMenuUI.SetActive(false);
+        //Time.timeScale = 1f;
+        Debug.Log("LoadMenu");
+    }
 
-        void QuitGame()
-        {
-            //Application.Quit();
-            Debug.Log("QuitGame");
-        }
+    public void QuitGame()
+    {
+        //Application.Quit();
+        Debug.Log("QuitGame");
+        Application.Quit();
+    }
+    public void resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Resume");
+    }
+
+    public void pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+        Debug.Log("PauseMenu");
     }
 }

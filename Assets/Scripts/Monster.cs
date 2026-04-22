@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class Monster : MonoBehaviour
 {
+   public AudioSource[ ] audio = new AudioSource[2];
 
    [SerializeField] ParticleSystem _particleSystem;
 
